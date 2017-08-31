@@ -1,0 +1,42 @@
+// Responsive Page Text example (Sass)
+// https://github.com/olets/responsive-page-text
+// demo: https://codepen.io/henry/pen/qXLwZa?editors=1100
+
+// example usage (Sass)
+// requires responsive-page-text.scss
+
+h5, h6 {
+  text-transform: uppercase
+}
+h5, h3 {
+  font-weight: 400
+}
+h1 {
+  @include fz(40);
+  @media (max-width: 768px) {
+    @include fz(30)
+  }
+}
+h2 {
+  @include fzlh(30,40);
+  @media (max-width: 900px) {
+    @include fz(24)
+  }
+}
+h3 {
+  @include fz(24)
+}
+h4 {
+  @include fz(20)
+}
+h5 {
+  @include fz(17)
+}
+h6 {
+  @include fz(15)
+}
+
+/* for demo purposes only */
+* {
+  font-family: sans-serif;
+}

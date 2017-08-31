@@ -1,0 +1,42 @@
+// Responsive Page Text example (LESS)
+// https://github.com/olets/responsive-page-text
+// demo: https://codepen.io/henry/pen/brOzZw?editors=1100
+
+// example usage (LESS)
+// requires responsive-page-text.less
+
+h5, h6 {
+  text-transform: uppercase
+}
+h5, h3 {
+  font-weight: 400
+}
+h1 {
+  .fz(40);
+  @media (max-width: 768px) {
+    .fz(30)
+  }
+}
+h2 {
+  .fzlh(30,40);
+  @media (max-width: 900px) {
+    .fz(24)
+  }
+}
+h3 {
+  .fz(24)
+}
+h4 {
+  .fz(20)
+}
+h5 {
+  .fz(17)
+}
+h6 {
+  .fz(15)
+}
+
+/* for demo purposes only */
+* {
+  font-family: sans-serif;
+}

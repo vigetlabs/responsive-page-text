@@ -1,0 +1,36 @@
+// Responsive Page Text (Sass)
+// https://github.com/olets/responsive-page-text
+// demo: https://codepen.io/henry/pen/qXLwZa?editors=1100
+
+// each of these sections can be in their own file, but order does matter
+
+// global mixins
+@mixin fz($font-size: $fz) {// named for the Emmet `font-size` abbreviation
+  font-size: $font-size * 1rem / $fz;
+}
+@mixin lh($line-spacing: $lh / $fz) {// named for the Emmet `line-height` abbreviation
+  line-height: $line-spacing;
+}
+@mixin fzlh($font-size: $fz, $line-height: $lh) {
+  @include fz($font-size);
+  @include lh($line-height / $font-size)
+}
+
+// site variables
+$fz: 14;// PROVIDE the designed font size (pixel value; no unit)
+$lh: 18;// PROVIDE the designed line height (pixel value; no unit)
+$mobile-font-size-factor: .74;// customizable
+$mobile-line-height-factor: $mobile-font-size-factor * 5/4;// customizable
+
+// document root calculated values
+$mobile-font-size: $fz * $mobile-font-size-factor;
+$mobile-line-height: $lh * $mobile-line-height-factor;
+
+// document root styling
+html {// OR :root if you prefer
+  font-size: $fz * 1px;
+  @include lh;
+  @media (max-width: 768px) {// SUBSTITUTE your own mobile media query here
+    @include fzlh($mobile-font-size, $mobile-line-height)
+  }
+}
